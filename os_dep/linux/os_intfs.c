@@ -657,11 +657,8 @@ static int rtw_ndev_notifier_call(struct notifier_block * nb, unsigned long stat
 #endif
 		return NOTIFY_DONE;
 
-	DBG_871X_LEVEL(_drv_info_, FUNC_NDEV_FMT" state:%lu\n", FUNC_NDEV_ARG(dev), state);
-
 	switch (state) {
 	case NETDEV_CHANGENAME:
-		rtw_adapter_proc_replace(dev);
 		break;
 	}
 
@@ -702,21 +699,17 @@ void rtw_ndev_uninit(struct net_device *dev)
 	rtw_adapter_proc_deinit(dev);
 }
 
-#if (LINUX_VERSION_CODE>=KERNEL_VERSION(2,6,29))
 static const struct net_device_ops rtw_netdev_ops = {
 	.ndo_init = rtw_ndev_init,
 	.ndo_uninit = rtw_ndev_uninit,
 	.ndo_open = netdev_open,
 	.ndo_stop = netdev_close,
 	.ndo_start_xmit = rtw_xmit_entry,
-#if (LINUX_VERSION_CODE>=KERNEL_VERSION(2,6,35))
-	.ndo_select_queue	= rtw_select_queue,
-#endif
+	.ndo_select_queue = rtw_select_queue,
 	.ndo_set_mac_address = rtw_net_set_mac_address,
 	.ndo_get_stats = rtw_net_get_stats,
 	.ndo_do_ioctl = rtw_ioctl,
 };
-#endif
 
 int rtw_init_netdev_name(struct net_device *pnetdev, const char *ifname)
 {
