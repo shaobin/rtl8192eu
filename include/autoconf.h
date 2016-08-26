@@ -1,7 +1,7 @@
 /******************************************************************************
  *
  * Copyright(c) 2007 - 2011 Realtek Corporation. All rights reserved.
- *                                        
+ *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of version 2 of the GNU General Public License as
  * published by the Free Software Foundation.
@@ -32,16 +32,16 @@
 //#define RTL871X_MODULE_NAME "92EU"
 #define DRV_NAME "rtl8192eu"
 
-#define CONFIG_USB_HCI	
+#define CONFIG_USB_HCI
 
-#define PLATFORM_LINUX	
+#define PLATFORM_LINUX
 
-//#define CONFIG_IOCTL_CFG80211 
+//#define CONFIG_IOCTL_CFG80211
 
 #ifdef CONFIG_IOCTL_CFG80211
 	//#define RTW_USE_CFG80211_STA_EVENT /* Indecate new sta asoc through cfg80211_new_sta */
 	#define CONFIG_CFG80211_FORCE_COMPATIBLE_2_6_37_UNDER
-	//#define CONFIG_DEBUG_CFG80211 
+	//#define CONFIG_DEBUG_CFG80211
 	//#define CONFIG_DRV_ISSUE_PROV_REQ // IOT FOR S2
 	#define CONFIG_SET_SCAN_DENY_TIMER
 
@@ -53,43 +53,43 @@
 //#define CONFIG_PWRCTRL
 //#define CONFIG_H2CLBK
 
-#define CONFIG_EMBEDDED_FWIMG	
+#define CONFIG_EMBEDDED_FWIMG
 //#define CONFIG_FILE_FWIMG
 
 #define CONFIG_XMIT_ACK
 #ifdef CONFIG_XMIT_ACK
 	#define CONFIG_ACTIVE_KEEP_ALIVE_CHECK
 #endif
-#define CONFIG_80211N_HT	
+#define CONFIG_80211N_HT
 
-#define CONFIG_RECV_REORDERING_CTRL	
+#define CONFIG_RECV_REORDERING_CTRL
 
-//#define CONFIG_TCP_CSUM_OFFLOAD_RX	
+//#define CONFIG_TCP_CSUM_OFFLOAD_RX
 
-//#define CONFIG_DRVEXT_MODULE	
+//#define CONFIG_DRVEXT_MODULE
 
  //#define CONFIG_SUPPORT_USB_INT
  #ifdef	CONFIG_SUPPORT_USB_INT
-//#define CONFIG_USB_INTERRUPT_IN_PIPE	
+//#define CONFIG_USB_INTERRUPT_IN_PIPE
 #endif
 
 #define CONFIG_HIGH_CHAN_SUPER_CALIBRATION
 //#define CONFIG_DISABLE_MCS13TO15	1	// Disable MSC13-15 rates for more stable TX throughput with some 5G APs
 
-#define CONFIG_IPS	
+#define CONFIG_IPS
 	#ifdef CONFIG_IPS
 	//#define CONFIG_IPS_LEVEL_2	 //enable this to set default IPS mode to IPS_LEVEL_2
 #endif
-#define SUPPORT_HW_RFOFF_DETECTED	
+#define SUPPORT_HW_RFOFF_DETECTED
 
-#define CONFIG_LPS	
+#define CONFIG_LPS
 
 #if defined(CONFIG_LPS) && defined(CONFIG_SUPPORT_USB_INT)
-	//#define CONFIG_LPS_LCLK	
+	//#define CONFIG_LPS_LCLK
 #endif
 
-#ifdef CONFIG_LPS_LCLK	
-	#if defined(CONFIG_HIGH_CHAN_SUPER_CALIBRATION) 
+#ifdef CONFIG_LPS_LCLK
+	#if defined(CONFIG_HIGH_CHAN_SUPER_CALIBRATION)
 		#undef CONFIG_HIGH_CHAN_SUPER_CALIBRATION
 	#endif
 #endif
@@ -103,12 +103,12 @@
 //#define CONFIG_ANTENNA_DIVERSITY
 
 //after link
-#ifdef CONFIG_ANTENNA_DIVERSITY	 
-	#define CONFIG_HW_ANTENNA_DIVERSITY		
+#ifdef CONFIG_ANTENNA_DIVERSITY
+	#define CONFIG_HW_ANTENNA_DIVERSITY
 #endif
 
 
-//#define CONFIG_CONCURRENT_MODE 
+//#define CONFIG_CONCURRENT_MODE
 #ifdef CONFIG_CONCURRENT_MODE
 	//#define CONFIG_HWPORT_SWAP				//Port0->Sec , Port1 -> Pri
 	#define CONFIG_RUNTIME_PORT_SWITCH
@@ -120,7 +120,7 @@
 
 //#define CONFIG_IOL
 
-#define CONFIG_AP_MODE	
+#define CONFIG_AP_MODE
 #ifdef CONFIG_AP_MODE
 	//#define CONFIG_INTERRUPT_BASED_TXBCN // Tx Beacon when driver BCN_OK ,BCN_ERR interrupt occurs
 	#if defined(CONFIG_CONCURRENT_MODE) && defined(CONFIG_INTERRUPT_BASED_TXBCN)
@@ -128,25 +128,25 @@
 	#endif
 	#ifdef CONFIG_INTERRUPT_BASED_TXBCN
 		//#define CONFIG_INTERRUPT_BASED_TXBCN_EARLY_INT
-		#define CONFIG_INTERRUPT_BASED_TXBCN_BCN_OK_ERR		
+		#define CONFIG_INTERRUPT_BASED_TXBCN_BCN_OK_ERR
 	#endif
-	
+
 	#define CONFIG_NATIVEAP_MLME
 	#ifndef CONFIG_NATIVEAP_MLME
-		#define CONFIG_HOSTAPD_MLME	
-	#endif			
-	#define CONFIG_FIND_BEST_CHANNEL	
-	//#define CONFIG_NO_WIRELESS_HANDLERS	
+		#define CONFIG_HOSTAPD_MLME
+	#endif
+	#define CONFIG_FIND_BEST_CHANNEL
+	//#define CONFIG_NO_WIRELESS_HANDLERS
 
 	//#define	CONFIG_AUTO_AP_MODE
 
 #endif
 
-#define CONFIG_P2P	
+#define CONFIG_P2P
 #ifdef CONFIG_P2P
 	//The CONFIG_WFD is for supporting the Wi-Fi display
 	#define CONFIG_WFD
-	
+
 	#ifndef CONFIG_WIFI_TEST
 		#define CONFIG_P2P_REMOVE_GROUP_INFO
 	#endif
@@ -160,13 +160,13 @@
 #endif
 
 //	Added by Kurt 20110511
-//#define CONFIG_TDLS	
+//#define CONFIG_TDLS
 #ifdef CONFIG_TDLS
 //	#ifndef CONFIG_WFD
-//		#define CONFIG_WFD	
+//		#define CONFIG_WFD
 //	#endif
-//	#define CONFIG_TDLS_AUTOSETUP			
-//	#define CONFIG_TDLS_AUTOCHECKALIVE		
+//	#define CONFIG_TDLS_AUTOSETUP
+//	#define CONFIG_TDLS_AUTOCHECKALIVE
 #endif
 
 //#define CONFIG_EFUSE_CONFIG_FILE
@@ -186,9 +186,9 @@
 	#define CONFIG_IOL_READ_EFUSE_MAP
 	//#define DBG_IOL_READ_EFUSE_MAP
 	#define CONFIG_IOL_LLT
-	#define CONFIG_IOL_EFUSE_PATCH		
+	#define CONFIG_IOL_EFUSE_PATCH
 	#define CONFIG_IOL_IOREG_CFG
-	//#define CONFIG_IOL_IOREG_CFG_DBG	
+	//#define CONFIG_IOL_IOREG_CFG_DBG
 #endif
 
 
@@ -215,20 +215,20 @@
 //#define CONFIG_CHECK_AC_LIFETIME 1	// Check packet lifetime of 4 ACs.
 
 
-/* 
- * Interface  Related Config 
+/*
+ * Interface  Related Config
  */
 
 #ifndef CONFIG_MINIMAL_MEMORY_USAGE
-	#define CONFIG_USB_TX_AGGREGATION	
-	#define CONFIG_USB_RX_AGGREGATION	
+	#define CONFIG_USB_TX_AGGREGATION
+	#define CONFIG_USB_RX_AGGREGATION
 #endif
 
-#define CONFIG_PREALLOC_RECV_SKB	
+#define CONFIG_PREALLOC_RECV_SKB
 //#define CONFIG_REDUCE_USB_TX_INT		// Trade-off: Improve performance, but may cause TX URBs blocked by USB Host/Bus driver on few platforms.
-//#define CONFIG_EASY_REPLACEMENT	
+//#define CONFIG_EASY_REPLACEMENT
 
-/* 
+/*
  * CONFIG_USE_USB_BUFFER_ALLOC_XX uses Linux USB Buffer alloc API and is for Linux platform only now!
  */
 //#define CONFIG_USE_USB_BUFFER_ALLOC_TX 	// Trade-off: For TX path, improve stability on some platforms, but may cause performance degrade on other platforms.
@@ -238,7 +238,7 @@
 #undef CONFIG_PREALLOC_RECV_SKB
 #endif
 
-/* 
+/*
  * USB VENDOR REQ BUFFER ALLOCATION METHOD
  * if not set we'll use function local variable (stack memory)
  */
@@ -248,7 +248,7 @@
 #define CONFIG_USB_VENDOR_REQ_MUTEX
 #define CONFIG_VENDOR_REQ_RETRY
 
-//#define CONFIG_USB_SUPPORT_ASYNC_VDN_REQ 
+//#define CONFIG_USB_SUPPORT_ASYNC_VDN_REQ
 
 #define WAKEUP_GPIO_IDX	14	//WIFI Chip Side
 
@@ -262,7 +262,7 @@
 
 
 
-#define RTL8188E_FW_DOWNLOAD_ENABLE	
+#define RTL8188E_FW_DOWNLOAD_ENABLE
 
 //#define CONFIG_ONLY_ONE_OUT_EP_TO_LOW	0
 
@@ -271,7 +271,7 @@
 #define ENABLE_USB_DROP_INCORRECT_OUT
 
 
-//#define RTL8192CU_ADHOC_WORKAROUND_SETTING	
+//#define RTL8192CU_ADHOC_WORKAROUND_SETTING
 
 #define DISABLE_BB_RF	0
 
@@ -292,8 +292,8 @@
  */
 #ifdef CONFIG_PLATFORM_MN10300
 	#define CONFIG_SPECIAL_SETTING_FOR_FUNAI_TV
-	#define CONFIG_USE_USB_BUFFER_ALLOC_RX 
-	
+	#define CONFIG_USE_USB_BUFFER_ALLOC_RX
+
 	#if	defined (CONFIG_SW_ANTENNA_DIVERSITY)
 		#undef CONFIG_SW_ANTENNA_DIVERSITY
 		#define CONFIG_HW_ANTENNA_DIVERSITY
@@ -302,13 +302,13 @@
 	#if	defined (CONFIG_POWER_SAVING)
 		#undef CONFIG_POWER_SAVING
 	#endif
-	
+
 #endif//CONFIG_PLATFORM_MN10300
 
 
 
 #ifdef CONFIG_PLATFORM_TI_DM365
-#define CONFIG_USE_USB_BUFFER_ALLOC_RX 
+#define CONFIG_USE_USB_BUFFER_ALLOC_RX
 #endif
 
 
@@ -319,11 +319,11 @@
 
 #define 	RTL8192CE_SUPPORT 				0
 #define 	RTL8192CU_SUPPORT 			0
-#define 	RTL8192C_SUPPORT 				(RTL8192CE_SUPPORT|RTL8192CU_SUPPORT)	
+#define 	RTL8192C_SUPPORT 				(RTL8192CE_SUPPORT|RTL8192CU_SUPPORT)
 
 #define 	RTL8192DE_SUPPORT 				0
 #define 	RTL8192DU_SUPPORT 			0
-#define 	RTL8192D_SUPPORT 				(RTL8192DE_SUPPORT|RTL8192DU_SUPPORT)	
+#define 	RTL8192D_SUPPORT 				(RTL8192DE_SUPPORT|RTL8192DU_SUPPORT)
 
 #define 	RTL8723AU_SUPPORT				0
 #define 	RTL8723AS_SUPPORT				0

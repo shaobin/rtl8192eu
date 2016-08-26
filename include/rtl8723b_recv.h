@@ -89,7 +89,7 @@ typedef struct rxreport_8723b
 	u32 patternmatch:1;
 	u32 unicastwake:1;
 	u32 magicwake:1;
-	
+
 	//DWORD 4
 	u32 splcp:1;	//Ofdm sgi or cck_splcp
 	u32 ldpc:1;

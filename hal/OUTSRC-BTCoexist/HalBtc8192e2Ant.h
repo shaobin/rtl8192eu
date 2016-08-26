@@ -115,7 +115,7 @@ typedef struct _COEX_DM_8192E_2ANT{
 	u1Byte		curAmpduTimeType;
 } COEX_DM_8192E_2ANT, *PCOEX_DM_8192E_2ANT;
 
-typedef struct _COEX_STA_8192E_2ANT{	
+typedef struct _COEX_STA_8192E_2ANT{
 	BOOLEAN					bBtLinkExist;
 	BOOLEAN					bScoExist;
 	BOOLEAN					bA2dpExist;
